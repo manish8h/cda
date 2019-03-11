@@ -5,7 +5,5 @@ Rails.application.routes.draw do
   # get 'home' => 'pages#home'
   get 'home' => 'pages#home'
   resources :names
-
-  
-
+root 'names#index'
 end

@@ -1,2 +1,20 @@
-<h1>Names#index</h1>
-<p>Find me in app/views/names/index.html.erb</p>
+
+<h1>Listing Names:</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Age</th>
+    <th></th>
+  </tr>
+
+  <% @names.each do |name| %>
+    <tr>
+      <td><%= name.name %></td>
+      <td><%= name.age %></td>
+      <td><%= link_to 'Show', name_path(name) %></td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'New Name', new_name_path %>
