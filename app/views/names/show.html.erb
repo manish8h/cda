@@ -10,7 +10,8 @@
   <strong>Age:</strong>
   <%= @name.age %>
 </p>
-
-<p><%= link_to 'Destroy', name_path(@name),
+<p><%= link_to 'edit', edit_name_path(@name)%>
+<%= link_to 'Destroy', name_path(@name),
                 method: :delete,
-                data: { confirm: 'Are you sure?' } %></p>
+                data: { confirm: 'Are you sure?' } %>
+</p>

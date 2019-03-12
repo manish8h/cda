@@ -9,7 +9,11 @@ class NamesController < ApplicationController
   end
 
   def new
-    # @name = Name.new
+    @name = Name.new
+  end
+
+  def edit
+    @name = Name.find(params[:id])
   end
 
   def create
@@ -17,6 +21,18 @@ class NamesController < ApplicationController
     @name.save
     redirect_to @name
   end
+
+
+  def update
+    @name = Name.find(params[:id])
+
+    if @name.update(name_param)
+      redirect_to @name
+    else
+      render 'edit'
+    end
+  end
+
 
   def destroy
     @name = Name.find(params[:id])
